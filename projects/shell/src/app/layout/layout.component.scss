@@ -1,0 +1,67 @@
+:host {
+  .container {
+    margin: 20px auto;
+    border: 4px dashed blue;
+    padding: 20px;
+
+    .box-header {
+      display: flex;
+      justify-content: space-between;
+
+      .box-right {
+        button {
+          border: none;
+          background: #eb1924;
+          color: #fff;
+          padding: 10px 15px;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .box-content {
+      display: flex;
+      justify-content: space-between;
+
+      .box-image {
+        width: 49%;
+      }
+
+      .box-info {
+        width: 49%;
+        margin-top: 50px;
+
+        .title {
+          margin: 30px 0;
+        }
+
+        .option {
+          display: flex;
+          justify-content: space-between;
+
+          .option-item {
+            cursor: pointer;
+            border: 3px dashed transparent;
+
+            &.active {
+              border: 3px dashed violet
+            }
+          }
+        }
+      }
+    }
+    .box-buy {
+      margin-top: 50px;
+      display: flex;
+      justify-content: end;
+
+      button {
+        border: none;
+        background: #38B1CC;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

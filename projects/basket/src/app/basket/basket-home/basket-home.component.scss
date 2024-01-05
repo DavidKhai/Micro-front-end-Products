@@ -1,0 +1,30 @@
+:host {
+  .container {
+    display: block;
+    min-height: 200px;
+    width: 100%;
+    border: 5px dashed deeppink;
+    margin: 20px auto;
+
+    .box-button {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        border: none;
+        background: #eb1924;
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 5px;
+
+        &.back {
+          background: gray;
+        }
+
+        &.pay {
+          background: rgb(248, 144, 9);
+        }
+      }
+    }
+  }
+}

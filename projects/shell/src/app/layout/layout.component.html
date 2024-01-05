@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="box-header">
+        <div class="box-left">
+          <h3>Car Store</h3>
+        </div>
+        <div class="box-right">
+          <button routerLink="basket">Basket {{amount}} items</button>
+        </div>
+      </div>
+      <div class="box-content">
+        <div class="box-image">
+          <img [src]="productActive.image" alt="" class="img-fluid">
+        </div>
+        <div class="box-info">
+          <h4 class="title">Tractor A</h4>
+          <div class="option row">
+            <ng-container *ngFor="let product of products">
+              <div class="col-4 option-item" (click)="activeProduct(product)" [ngClass]="{'active': product.active}">
+                <img [src]="product.image" alt="" class="img-fluid">
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="box-buy">
+        <button (click)="addProduct(productActive)">Add to basket {{productActive.price}}$</button>
+      </div>
+    </div>
+    <div class="col-4">
+      <app-related-products [productActive]="productActive"></app-related-products>
+    </div>
+  </div>
+</div>

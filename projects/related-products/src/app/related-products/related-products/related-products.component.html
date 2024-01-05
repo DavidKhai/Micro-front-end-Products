@@ -1,0 +1,13 @@
+<div class="container">
+  <h3>Related Products</h3>
+  <div class="row">
+    <ng-container *ngFor="let relatedProduct of relatedProducts">
+      <div class="col-12">
+        <div class="option-item">
+          <img [src]="relatedProduct.image" alt="" class="img-fluid">
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
