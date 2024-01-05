@@ -1,0 +1,26 @@
+:host {
+  .container {
+    display: block;
+    width: 100%;
+    border: 5px dashed rgb(111, 199, 29);
+    margin: 30px auto;
+    padding: 20px;
+
+    .box-button {
+      display: flex;
+      justify-content: flex-start;
+
+      button {
+        border: none;
+        background: #eb1924;
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 5px;
+
+        &.back {
+          background: gray;
+        }
+      }
+    }
+  }
+}
