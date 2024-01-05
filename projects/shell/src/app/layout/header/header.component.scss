@@ -1,0 +1,54 @@
+:host {
+  .container {
+    display: block;
+    width: 100%;
+    border: 5px dashed rgb(199, 40, 29);
+    margin: 30px auto;
+    padding: 20px;
+
+    .box {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      font-weight: 600;
+
+      .logo {
+        cursor: pointer;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 0;
+
+        li {
+          cursor: pointer;
+          display: inline-block;
+          list-style: none;
+          margin-right: 20px;
+          position: relative;
+          transition: 0.4s;
+
+          &:before {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: greenyellow;
+          }
+
+          &:hover::before {
+            width: 100%;
+          }
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}

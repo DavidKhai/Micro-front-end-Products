@@ -14,7 +14,8 @@
           <img [src]="productActive.image" alt="" class="img-fluid">
         </div>
         <div class="box-info">
-          <h4 class="title">Tractor A</h4>
+          <h4 class="title">{{productActive.name}}</h4>
+          <div class="price">{{productActive.price}}$</div>
           <div class="option row">
             <ng-container *ngFor="let product of products">
               <div class="col-4 option-item" (click)="activeProduct(product)" [ngClass]="{'active': product.active}">
@@ -25,7 +26,7 @@
         </div>
       </div>
       <div class="box-buy">
-        <button (click)="addProduct(productActive)">Add to basket {{productActive.price}}$</button>
+        <button (click)="addProduct(productActive)">Add to basket</button>
       </div>
     </div>
     <div class="col-4">
