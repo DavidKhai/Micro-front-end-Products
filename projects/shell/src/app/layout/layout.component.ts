@@ -13,21 +13,24 @@ export class LayoutComponent implements OnInit {
       name: 'Tractor Porsche-Diesel Master 419',
       price: 6,
       image: '../assets/images/car1.jpg',
-      active: false
+      active: false,
+      quantity: 1
     },
     {
       id: '2',
       name: 'Tractor Fendt F20 Dieselroß',
       price: 7,
       image: '../assets/images/car2.jpg',
-      active: false
+      active: false,
+      quantity: 1
     },
     {
       id: '3',
       name: 'Tractor Eicher Diesel 215/16',
       price: 8,
       image: '../assets/images/car3.jpg',
-      active: false
+      active: false,
+      quantity: 1
     }
   ];
   productActive: any;

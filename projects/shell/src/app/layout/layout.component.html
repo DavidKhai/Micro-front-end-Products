@@ -6,7 +6,7 @@
           <h3>Car Store</h3>
         </div>
         <div class="box-right">
-          <button routerLink="basket">Basket {{amount}} items</button>
+          <button routerLink="basket" [class.disabled]="(amount <= 0) ? true : null">Basket {{amount}} items</button>
         </div>
       </div>
       <div class="box-content">
