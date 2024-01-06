@@ -1,23 +1,29 @@
 <div class="container">
   <h3 class="text-center mt-3">BASKET</h3>
   <ng-container *ngFor="let item of basketUI; index as i">
-    <div class="row m-3 d-flex align-items-center">
-      <div class="col-3">
-        <img [src]="item.image" width="200" alt="" class="img-fluid">
+    <div class="row m-3 d-flex align-items-center box-item">
+      <div class="col-3 box-image">
+        <img [src]="item.image" width="200" alt="" class="img-fluid" />
+        <img
+          src="../assets/images/remove.png"
+          width="32"
+          alt=""
+          class="img-fluid remove"
+          (click)="remove(i)"
+        />
       </div>
-      <div class="col-3">{{item.name}}</div>
-      <div class="col-3">Price: {{item.price}} $</div>
+      <div class="col-3">{{ item.name }}</div>
+      <div class="col-3">Price: {{ item.price }} $</div>
       <div class="col-3 d-flex justify-content-around align-items-center">
         <div class="decrease" (click)="decrease(i)">-</div>
-        <div>{{item.quantity}}</div>
+        <div>{{ item.quantity }}</div>
         <div class="increase" (click)="increase(i)">+</div>
       </div>
     </div>
   </ng-container>
-  <div class="total"><span>TOTAL:  </span>{{total()}}$</div>
+  <div class="total"><span>TOTAL: </span>{{ total() }}$</div>
   <div class="box-button">
     <button routerLink="/" class="back m-3">Back</button>
     <button routerLink="/payment" class="pay m-3">PAY</button>
   </div>
 </div>
-

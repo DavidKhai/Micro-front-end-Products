@@ -6,31 +6,55 @@
           <h3>Car Store</h3>
         </div>
         <div class="box-right">
-          <button routerLink="/basket" [class.disabled]="(amount <= 0) ? true : null">Basket {{amount}} items</button>
+          <div
+            class="cart"
+            routerLink="/basket"
+            [class.disabled]="amount <= 0 ? true : null"
+          >
+            <img
+              src="../assets/images/grocery-cart.png"
+              alt=""
+              class="img-fluid"
+            />
+            <span class="qty">{{ amount }}</span>
+          </div>
         </div>
       </div>
       <div class="box-content">
         <div class="box-image">
-          <img [src]="productActive.image" alt="" class="img-fluid">
+          <img [src]="productActive.image" alt="" class="img-fluid" />
         </div>
         <div class="box-info">
-          <h4 class="title">{{productActive.name}}</h4>
-          <div class="price">{{productActive.price}}$</div>
+          <h4 class="title">{{ productActive.name }}</h4>
+          <div class="price">{{ productActive.price }}$</div>
           <div class="option row">
             <ng-container *ngFor="let product of products">
-              <div class="col-4 option-item" (click)="activeProduct(product)" [ngClass]="{'active': product.active}">
-                <img [src]="product.image" alt="" class="img-fluid">
+              <div
+                class="col-4 option-item"
+                (click)="activeProduct(product)"
+                [ngClass]="{ active: product.active }"
+              >
+                <img [src]="product.image" alt="" class="img-fluid" />
               </div>
             </ng-container>
           </div>
         </div>
       </div>
       <div class="box-buy">
-        <button (click)="addProduct(productActive)">Add to basket</button>
+        <button (click)="addProduct(productActive)">
+          <img
+            src="../assets/images/add-to-basket.png"
+            alt=""
+            class="img-fluid"
+          />
+          <span>Add to basket</span>
+        </button>
       </div>
     </div>
     <div class="col-4">
-      <app-related-products [productActive]="productActive"></app-related-products>
+      <app-related-products
+        [productActive]="productActive"
+      ></app-related-products>
     </div>
   </div>
 </div>
