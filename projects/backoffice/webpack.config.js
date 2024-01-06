@@ -1,10 +1,10 @@
-const { ModuleFederationPlugin } = require("webpack").container;
+const { ModuleFederationPlugin } = require('webpack').container;
 
 /** @type {require('webpack').Configuration} */
 module.exports = {
   output: {
-    publicPath: "auto", // we setup the `publicHost` in `angular.json` file
-    uniqueName: "shell",
+    publicPath: 'auto', // we setup the `publicHost` in `angular.json` file
+    uniqueName: 'backoffice'
   },
   optimization: {
     runtimeChunk: false,
@@ -15,22 +15,20 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "shell",
+      name: 'backoffice',
+      filename: 'remoteEntry.js',
       library: {
         // because Angular v14 will output ESModule
-        type: "module",
+        type: 'module',
       },
-      remotes: {
-        basket: "http://localhost:5300/remoteEntry.js",
-        relatedProducts: "http://localhost:5400/remoteEntry.js",
-        payment: "http://localhost:5500/remoteEntry.js",
-        backOffice: "http://localhost:5600/remoteEntry.js",
+      exposes: {
+        './BackOfficeModule': 'projects/backoffice/src/app/backoffice/backoffice.module.ts',
       },
       /**
        * shared can be an object of type SharedConfig
        * you can change this to select something can be shared
        */
-      shared: ["@angular/core", "@angular/common", "@angular/router"],
+       shared: ['@angular/core', '@angular/common', '@angular/router'],
       // shared: {
       //   "@angular/animations": {
       //     singleton: true,

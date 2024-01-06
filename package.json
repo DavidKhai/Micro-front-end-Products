@@ -10,7 +10,8 @@
     "start:shell": "ng serve shell --o",
     "start:basket": "ng serve basket",
     "start:related-products": "ng serve related-products",
-    "start:payment": "ng serve payment"
+    "start:payment": "ng serve payment",
+    "start:back-office": "ng serve backoffice"
   },
   "private": true,
   "dependencies": {
